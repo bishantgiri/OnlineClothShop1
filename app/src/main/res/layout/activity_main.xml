@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
    <Button
+       android:textColor="#2323DD"
        android:id="@+id/btnLoad"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
