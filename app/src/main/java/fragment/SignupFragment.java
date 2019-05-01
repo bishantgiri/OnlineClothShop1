@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,9 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
     }
     public void onClick(View v){
+        if(!validate()){
+            return;
+        }
         Register();
 
     }
@@ -63,5 +67,23 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
             Toast.makeText(getActivity(), "Password Doesn't Match", Toast.LENGTH_SHORT).show();
 
         }
+    }
+    public Boolean validate(){
+        boolean isValid=true;
+        if(TextUtils.isEmpty(etUsername_Signup.getText().toString())){
+            etUsername_Signup.setError("Please Enter Username");
+            etUsername_Signup.requestFocus();
+            isValid=false;
+        }else if (TextUtils.isEmpty(etPassword_Signup.getText().toString())){
+            etPassword_Signup.setError("Please Enter Password");
+            etPassword_Signup.requestFocus();
+            isValid=false;
+
+        }else if (TextUtils.isEmpty(etConfPass.getText().toString())) {
+            etConfPass.setError("Please Renter Password ");
+            etConfPass.requestFocus();
+            isValid = false;
+        }
+        return isValid;
     }
 }

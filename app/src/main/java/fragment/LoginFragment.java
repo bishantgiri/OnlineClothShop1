@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,6 +45,9 @@ public class LoginFragment extends Fragment implements  View.OnClickListener{
         return view;
     }
     public void onClick(View v){
+        if(!validate()){
+            return;
+        }
         checkLogin();
 
     }
@@ -64,6 +68,20 @@ public class LoginFragment extends Fragment implements  View.OnClickListener{
            Toast.makeText(getActivity(), "Username or password doesn't match", Toast.LENGTH_SHORT).show();
 
        }
+    }
+    public Boolean validate(){
+        boolean isValid=true;
+        if(TextUtils.isEmpty(etUsername_Login.getText().toString())){
+            etUsername_Login.setError("Please Enter Username");
+            etUsername_Login.requestFocus();
+            isValid=false;
+        }else if (TextUtils.isEmpty(etPassword_Login.getText().toString())){
+            etPassword_Login.setError("Please Enter Password");
+            etPassword_Login.requestFocus();
+            isValid=false;
+
+        }
+        return isValid;
     }
 
 }
