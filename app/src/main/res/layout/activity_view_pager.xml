@@ -14,7 +14,7 @@
         android:id="@+id/tabId"
         app:tabTextColor="#ffffff"
         app:tabIndicatorColor="#ffffff"
-        android:background="#329C9C">
+        android:background="#7251AC">
 
     </android.support.design.widget.TabLayout>
 
