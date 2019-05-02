@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.onlineclothshop.DashboardActivity;
+import com.example.onlineclothshop.DashboardActivityOne;
 import com.example.onlineclothshop.R;
 
 /**
@@ -60,7 +61,7 @@ public class LoginFragment extends Fragment implements  View.OnClickListener{
        String pass=etPassword_Login.getText().toString();
        if(username.equals(uname) && password.equals(pass)){
            //Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_SHORT).show();
-           Intent intent= new Intent(getActivity().getApplicationContext(), DashboardActivity.class);
+           Intent intent= new Intent(getActivity().getApplicationContext(), DashboardActivityOne.class);
            startActivity(intent);
 
        }
