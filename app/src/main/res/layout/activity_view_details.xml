@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewDetailsActivity"
+    android:orientation="vertical"
+    android:background="@drawable/ic_background">
+
+    <ImageView
+        android:id="@+id/ivDetailsImage"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etItemNameView"
+        android:text="test"
+        android:textSize="30sp"
+        android:textColor="#FFAB40"
+        android:textStyle="italic"
+        android:fontFamily="Recursive"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPrice_view"
+        android:text="test"
+        android:textSize="30sp"
+        android:textColor="#FFAB40"
+        android:textStyle="italic"
+        android:fontFamily="Recursive"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etItemDesc_view"
+        android:text="test"
+        android:textSize="30sp"
+        android:textColor="#FFAB40"
+        android:textStyle="italic"
+        android:fontFamily="Recursive"
+        />
+
+</LinearLayout>

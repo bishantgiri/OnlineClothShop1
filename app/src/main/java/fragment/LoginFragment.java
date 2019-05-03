@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.onlineclothshop.DashboardActivity;
 import com.example.onlineclothshop.DashboardActivityOne;
 import com.example.onlineclothshop.R;
 

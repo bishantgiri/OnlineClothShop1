@@ -1,6 +1,7 @@
 package adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.onlineclothshop.Items;
 import com.example.onlineclothshop.R;
+import com.example.onlineclothshop.ViewDetailsActivity;
 
 import java.util.List;
 
@@ -34,11 +36,25 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemsViewHolder itemsViewHolder, int i) {
-        Items items=itemsList.get(i);
+    public void onBindViewHolder(@NonNull ItemsViewHolder itemsViewHolder, final int i) {
+        final Items items=itemsList.get(i);
         itemsViewHolder.imgItem.setImageResource(Integer.parseInt(items.getItemImage()));
         itemsViewHolder.tvItemName.setText(items.getItemName());
         itemsViewHolder.tvItemPrice.setText(items.getItemPrice());
+
+        itemsViewHolder.imgItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(mContext, ViewDetailsActivity.class);
+
+                intent.putExtra("itemImage",items.getItemImage());
+                intent.putExtra("itemName",items.getItemName());
+                intent.putExtra("itemPrice",items.getItemPrice());
+                intent.putExtra("itemDesc",items.getItemDesc());
+
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
