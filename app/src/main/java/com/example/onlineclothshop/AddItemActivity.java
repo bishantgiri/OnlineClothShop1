@@ -44,6 +44,10 @@ public class AddItemActivity extends AppCompatActivity {
             printStream.println(etItemName.getText().toString()+"->"+etPrice.getText().toString()+"->"+etImageName.getText().toString()+"->"+etItemDesc.getText().toString());
 
             Toast.makeText(this,"Saved to"+getFilesDir(),Toast.LENGTH_SHORT).show();
+            etImageName.setText("");
+            etPrice.setText("");
+            etItemDesc.setText("");
+            etItemName.setText("");
 
         }catch (IOException e){
             Log.d("Online Cloth App","Error: "+e.toString());
