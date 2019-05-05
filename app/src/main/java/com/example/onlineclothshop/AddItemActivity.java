@@ -1,5 +1,6 @@
 package com.example.onlineclothshop;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 public class AddItemActivity extends AppCompatActivity {
-    private Button btnAddItem;
+    private Button btnAddItem,btnback;
     private EditText etItemName,etPrice,etImageName,etItemDesc;
 
     @Override
@@ -25,6 +26,14 @@ public class AddItemActivity extends AppCompatActivity {
         etPrice=findViewById(R.id.etItemPrice);
         etImageName=findViewById(R.id.etItemImage);
         etItemDesc=findViewById(R.id.etItemDesc);
+        btnback=findViewById(R.id.btnback);
+
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AddItemActivity.this,DashboardActivityOne.class);
+            }
+        });
 
         btnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
